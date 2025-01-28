@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ie02mbppi-go-gitops
+  description: This is GitOps manifest for ie02mbppi-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ie02mbppi-go
+    backstage.io/kubernetes-id: ie02mbppi-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: ie02mbppi-go-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ie02mbppi-go
